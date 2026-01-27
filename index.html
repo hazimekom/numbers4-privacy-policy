@@ -29,10 +29,11 @@
       letter-spacing: 0.01em;
     }
     h1 { font-size: 26px; }
-    h2 { font-size: 20px; margin-top: 28px; }
-    p { margin: 10px 0; }
+    h2 { font-size: 20px; margin-top: 28px; border-bottom: 1px solid rgba(0, 255, 160, 0.15); padding-bottom: 8px; }
+    p { margin: 12px 0; }
     ul { padding-left: 20px; }
-    a { color: #7ed4ff; }
+    li { margin-bottom: 8px; }
+    strong { color: #00e8a5; }
     .label {
       display: inline-block;
       padding: 2px 8px;
@@ -41,59 +42,66 @@
       background: #00e8a5;
       border-radius: 8px;
       margin-left: 8px;
+      vertical-align: middle;
+    }
+    .update-date {
+      font-size: 14px;
+      color: #a0aec0;
+      text-align: right;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="update-date">最終改訂日：2026年1月27日</div>
     <h1>プライバシーポリシー <span class="label">ナンバーズ4予想AI 忍者</span></h1>
     <p>本アプリ「ナンバーズ4予想AI 忍者」（以下、「本アプリ」）は、ユーザーのプライバシーを尊重し、以下の方針に基づいて個人情報を取り扱います。</p>
 
-    <h2>1. 取得する情報について</h2>
-    <p>本アプリでは、ユーザー個人を直接特定できる情報（氏名、住所、メールアドレス等）をアプリ内で取得・保存することはありません。</p>
-    <p>ただし、広告配信のために以下の情報が取得される場合があります。</p>
+    <h2>1. 取得する情報および利用目的</h2>
+    <p>本アプリでは、サービスの提供・改善および広告配信のため、以下の第三者提供ツールを利用して情報を自動取得します。取得される情報は匿名化されており、特定の個人を識別するものではありません。</p>
     <ul>
-      <li>広告識別子（Advertising ID）<br>
-        本アプリでは Google AdMob を利用して広告を配信しています。AdMob は広告配信の最適化のため、広告識別子を取得する場合があります。</li>
+      <li><strong>Google Analytics for Firebase（利用状況分析）</strong><br>
+        取得情報：アプリの起動回数、特定の機能（予測ロジック等）の使用頻度、端末のモデル、OSバージョン。<br>
+        利用目的：アプリの利便性向上および利用状況の統計的把握。</li>
+      <li><strong>Firebase Crashlytics（クラッシュ報告）</strong><br>
+        取得情報：アプリがクラッシュした際のスタックトレースおよび端末の状態情報。<br>
+        利用目的：不具合の迅速な特定および修正、品質向上。</li>
+      <li><strong>Firebase Cloud Messaging / Remote Config（通知・設定管理）</strong><br>
+        取得情報：プッシュ通知用トークン、アプリの設定値。<br>
+        利用目的：最新の更新情報やイベント情報の配信、アプリ動作の動的最適化。</li>
+      <li><strong>Google AdMob（広告配信）</strong><br>
+        取得情報：広告識別子（AD ID）、広告へのインタラクション情報。<br>
+        利用目的：広告の配信最適化および不正防止。</li>
     </ul>
 
-    <h2>2. 情報の利用目的</h2>
-    <p>取得される情報は、以下の目的にのみ利用されます。</p>
+    <h2>2. 権限に関する明示（重要）</h2>
+    <p>本アプリは、ユーザーのプライバシー保護と透明性を重視し、以下の権限を<strong>一切使用しません。</strong></p>
     <ul>
-      <li>広告の配信および表示</li>
-      <li>不正防止・配信品質の向上</li>
+      <li>電話番号や通話状態の読み取り（READ_PHONE_STATE）</li>
+      <li>端末内の写真、メディア、ファイルへのアクセス（READ/WRITE_EXTERNAL_STORAGE）</li>
     </ul>
-    <p>本アプリ独自で、広告識別子を分析・保存・外部送信することはありません。</p>
 
-    <h2>3. 情報の送信・共有について</h2>
+    <h2>3. 情報の保存とセキュリティ</h2>
     <ul>
-      <li>本アプリは、ユーザーデータを外部サーバーへ送信しません。</li>
-      <li>アプリ内のデータはすべて端末内（ローカル）に保存されます。</li>
-      <li>第三者への情報提供は、Google AdMob による広告配信を除き行いません。</li>
+      <li>ユーザーが入力したデータや予測履歴は、原則として端末内（ローカル）に保存されます。</li>
+      <li>データのバックアップ・共有機能を利用する際も、本アプリがユーザーの認証情報やファイルの中身を直接取得・保持することはありません。</li>
+      <li>取得されたデータは、Google社の安全なサーバーで暗号化されて管理されます。</li>
     </ul>
-    <p>Google AdMob のプライバシーポリシーについては、以下をご確認ください。<br>
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-        https://policies.google.com/privacy
-      </a>
+
+    <h2>4. ユーザーのコントロール権</h2>
+    <p>ユーザーは、端末の設定より以下の操作が可能です。</p>
+    <ul>
+      <li>広告識別子のリセットおよびパーソナライズド広告の無効化</li>
+      <li>プッシュ通知の受信設定（ON/OFF）の変更</li>
+    </ul>
+
+    <h2>5. お問い合わせ</h2>
+    <p>本ポリシーに関するお問い合わせは、以下までご連絡ください。<br>
+      メールアドレス：<strong>n4ninja.info@gmail.com</strong>
     </p>
 
-    <h2>4. 広告について</h2>
-    <p>本アプリでは、Google が提供する広告サービス「AdMob」を使用しています。広告識別子は、端末の設定からリセットまたは無効化することが可能です。</p>
-
-    <h2>5. ユーザーの権利</h2>
-    <p>ユーザーは、以下の操作を行うことができます。</p>
-    <ul>
-      <li>広告識別子のリセット</li>
-      <li>パーソナライズド広告の無効化</li>
-    </ul>
-    <p>これらの設定は、端末の OS 設定より行ってください。</p>
-
-    <h2>6. お問い合わせ</h2>
-    <p>本ポリシーに関するお問い合わせは、以下までご連絡ください。</p>
-    <p>メールアドレス：n4ninja.info@gmail.com</p>
-
-    <h2>7. プライバシーポリシーの変更</h2>
-    <p>本プライバシーポリシーは、必要に応じて変更される場合があります。変更後のポリシーは、本ページにて速やかに公開します。</p>
+    <p style="margin-top: 40px; font-size: 13px; color: #a0aec0;">※本プライバシーポリシーは、必要に応じて変更される場合があります。変更後のポリシーは、本ページにて速やかに公開します。</p>
   </div>
 </body>
 </html>
